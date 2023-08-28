@@ -1,9 +1,9 @@
 import { FileLite, FileChunk } from "../types/file";
-import { embedding } from "./openai";
+import { embedding } from "./replicate";
 
 // This is the minimum cosine similarity score that a file must have with the search query to be considered relevant
 // This is an arbitrary value, and you should vary/ remove this depending on the diversity of your dataset
-const COSINE_SIM_THRESHOLD = 0.72;
+const COSINE_SIM_THRESHOLD = 0.0;
 
 // This function takes a search query and a list of files, and returns the chunks of text that are most semantically similar to the query
 export async function searchFileChunks({

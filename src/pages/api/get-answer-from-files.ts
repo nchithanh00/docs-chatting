@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { completionStream } from "../../services/openai";
+import { completionStream } from "../../services/replicate";
 import { FileChunk } from "../../types/file";
 
 type Data = {
@@ -49,9 +49,8 @@ export default async function handler(
       `Files:\n${filesString}\n\n` +
       `Answer:`;
 
-    const stream = completionStream({
-      prompt,
-    });
+
+    const stream = await completionStream(prompt);
 
     // Set the response headers for streaming
     res.writeHead(200, {
