@@ -1,10 +1,11 @@
 # File Q&A
 
-File Q&A is a [Next.js](https://nextjs.org/) app that lets you find answers in your files using OpenAI APIs. You can upload files and ask questions related to their content, and the app will use embeddings and GPT to generate answers from the most relevant files.
+This project was cloned from OpenAI example: [here](https://github.com/openai/openai-cookbook/tree/main/apps/file-q-and-a/nextjs)
+File Q&A is a [Next.js](https://nextjs.org/) app that lets you find answers in your files using Replicate APIs. You can upload files and ask questions related to their content, and the app will use embeddings and llama-2 to generate answers from the most relevant files.
 
 ## Requirements
 
-To run the app, you need an OpenAI API key. You can create a new API key [here](https://beta.openai.com/account/api-keys).
+To run the app, you need an Replicate API key. You can create a new API key [here](https://replicate.com/account/api-tokens).
 
 ## Set Up
 
