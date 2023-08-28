@@ -49,7 +49,7 @@ function FileQandAArea(props: FileQandAAreaProps) {
         {
           searchQuery: question,
           files: props.files,
-          maxResults: 10,
+          maxResults: 5,
         }
       );
 

@@ -3,7 +3,7 @@ import { chunkText } from "./chunkText";
 import { embedding } from "./replicate";
 
 // There isn't a good JS tokenizer at the moment, so we are using this approximation of 4 characters per token instead. This might break for some languages.
-const MAX_CHAR_LENGTH = 250 * 4;
+const MAX_CHAR_LENGTH = 500 * 4;
 
 // This function takes a text and returns an array of embeddings for each chunk of the text
 // The text is split into chunks of a given maximum character length
@@ -11,7 +11,7 @@ const MAX_CHAR_LENGTH = 250 * 4;
 export async function getEmbeddingsForText({
   text,
   maxCharLength = MAX_CHAR_LENGTH,
-  batchSize = 20,
+  batchSize = 10,
 }: {
   text: string;
   maxCharLength?: number;
@@ -24,6 +24,8 @@ export async function getEmbeddingsForText({
     batches.push(textChunks.slice(i, i + batchSize));
   }
 
+  console.log(batches.length);
+
   try {
     const batchPromises = batches.map((batch) => embedding({ input: batch }));
 
@@ -33,6 +35,8 @@ export async function getEmbeddingsForText({
       embedding,
       text: textChunks[index],
     }));
+
+    console.log(textEmbeddings[textEmbeddings.length - 1])
 
     return textEmbeddings;
   } catch (error: any) {
