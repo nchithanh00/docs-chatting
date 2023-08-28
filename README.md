@@ -18,7 +18,7 @@ In your terminal, navigate to the `nextjs` directory of this example app, and th
 npm install
 ```
 
-Copy the .env.local.example file into a .env.local file and fill out the OpenAI API key field.
+Copy the .env.local.example file into a .env.local file and fill out the Replicate API key field.
 
 ## Development
 
