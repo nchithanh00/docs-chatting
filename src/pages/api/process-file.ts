@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import formidable, { Fields, Files } from "formidable"; // to handle file uploads
+import { Formidable, Fields, Files } from "formidable"; // to handle file uploads
 
 import { TextEmbedding } from "../../types/file";
 import extractTextFromFile from "../../services/extractTextFromFile";
@@ -26,8 +26,7 @@ export default async function handler(
   }
 
   // Create a formidable instance to parse the request as a multipart form
-  const form = new formidable.IncomingForm();
-  form.maxFileSize = 30 * 1024 * 1024; // Set the max file size to 30MB
+  const form = new Formidable({ maxFileSize: 30 * 1024 * 1024 }); // Set the max file size to 30MB
 
   try {
     const { fields, files } = await new Promise<{

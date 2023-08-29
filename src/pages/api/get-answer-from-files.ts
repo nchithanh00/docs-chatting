@@ -60,8 +60,11 @@ export default async function handler(
     });
 
     // Write the data from the stream to the response
-    for await (const data of stream) {
-      res.write(data);
+    const reader = stream.getReader(); 
+    while (true) { 
+      const { value, done } = await reader.read(); 
+      if (done) break; 
+      res.write(value); 
     }
 
     // End the response when the stream is done
