@@ -1,8 +1,8 @@
-# File Q&A
+# Docs Chatting
 
 This project was cloned from OpenAI example: [here](https://github.com/openai/openai-cookbook/tree/main/apps/file-q-and-a/nextjs)
 
-File Q&A is a [Next.js](https://nextjs.org/) app that lets you find answers in your files using Replicate APIs. You can upload files and ask questions related to their content, and the app will use embeddings and llama-2 to generate answers from the most relevant files.
+Docs Chatting is a [Next.js](https://nextjs.org/) app that lets you find answers in your files using Replicate APIs. You can upload files and ask questions related to their content, and the app will use embeddings and llama-2 to generate answers from the most relevant files.
 
 ## Requirements
 
